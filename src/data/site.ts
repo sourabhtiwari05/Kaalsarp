@@ -5,8 +5,7 @@ export const siteConfig = {
     "Kaal Sarp Dosh Nivaran Pooja Ujjain | Mangal Dosh, Navgraha Shanti | Pandit Dheeraj Sharma",
   description:
     "Ujjain mein Kaal Sarp Dosh, Mangal Dosh, Navgraha Shanti, Rudrabhishek aur Vastu Dosh Nivaran Puja — Pandit Dheeraj Sharma, 20+ varsh anubhav. Online aur Offline dono booking. Call/WhatsApp: 9977999075.",
-  // url: "https://kaalsarpdoshnivaranujjain.com",
-  url: "https://kalsharppooja-in.vercel.app",
+  url: "https://kalsharppooja.in",
   phone: {
     primary: "+919977999075",
     primaryDisplay: "9977999075",

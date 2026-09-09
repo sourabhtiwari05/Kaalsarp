@@ -8,7 +8,7 @@ export function generateOrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "ReligiousOrganization",
     name: siteConfig.nameEn,
-    image: `${siteConfig.url}/images/pandit-dheeraj-sharma.webp`,
+    image: `${siteConfig.url}/images/pandit-dheeraj-sharma1.webp`,
     url: siteConfig.url,
     telephone: [siteConfig.phone.primary, siteConfig.phone.secondary],
     address: {

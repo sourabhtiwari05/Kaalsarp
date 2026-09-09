@@ -10,7 +10,7 @@ export function WhyUjjain() {
       <div className="mx-auto w-full px-4 xs:px-5 sm:px-6 lg:px-8 xl:max-w-285 2xl:max-w-330">
         <div className="grid grid-cols-1 gap-8 items-center lg:grid-cols-[0.8fr_1.2fr] md:gap-14 lg:gap-14">
           {/* Image */}
-          <div className="relative max-w-100] lg:max-w-none mx-auto w-full">
+          <div className="relative max-w-100 lg:max-w-none mx-auto w-full">
             <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-gold-soft/30 shadow-brand">
               <Image
                 src="/images/mahakal-ji.webp"

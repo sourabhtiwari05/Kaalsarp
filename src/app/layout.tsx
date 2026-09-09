@@ -1,9 +1,6 @@
 import { Yatra_One, Cormorant_Garamond, Work_Sans } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
-import { TopBar } from "@/components/layout/TopBar";
-import { Footer } from "@/components/layout/Footer";
-import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { siteConfig } from "@/data/site";
 import { generateOrganizationSchema, generateFAQSchema } from "@/lib/seo";
 import LayoutV1 from "@/components/layout/LayoutV1";
@@ -50,7 +47,7 @@ export const metadata: Metadata = {
     locale: "hi_IN",
     images: [
       {
-        url: `${siteConfig.url}/images/pandit-dheeraj-sharma.webp`,
+        url: `${siteConfig.url}/images/pandit-dheeraj-sharma1.webp`,
         width: 900,
         height: 1200,
         alt: "Pandit Dheeraj Sharma Ji - Vedic Pandit Ujjain",
@@ -62,7 +59,7 @@ export const metadata: Metadata = {
     title: "Kaal Sarp Dosh Nivaran Pooja Ujjain | Pandit Dheeraj Sharma",
     description:
       "Ujjain mein Kaal Sarp Dosh, Mangal Dosh, Navgraha Shanti aur anya Vedic Pooja — 20+ varsh anubhav.",
-    images: [`${siteConfig.url}/images/pandit-dheeraj-sharma.webp`],
+    images: [`${siteConfig.url}/images/pandit-dheeraj-sharma1.webp`],
   },
   icons: {
     icon: "/favicon.ico",
