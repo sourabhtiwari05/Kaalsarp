@@ -9,7 +9,7 @@ export function FloatingWhatsApp() {
   const waUrl = createWhatsAppUrl(DEFAULT_WA_MESSAGE);
 
   return (
-    <div className="fixed z-100 bottom-4 right-4 sm:bottom-5.5 sm:right-5.5 flex items-center gap-3">
+    <div className="fixed z-100 bottom-4 right-4 sm:bottom-5.5 sm:right-5.5 flex flex-row-reverse items-center gap-3">
       <Link
         href={`tel:${siteConfig.phone.primary}`}
         aria-label="Call us"
