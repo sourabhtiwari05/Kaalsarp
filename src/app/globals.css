@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+/* ── Design Tokens ── */
+:root {
+  --ivory: #fbf3e4;
+  --ivory-deep: #f3e6cb;
+  --maroon: #7a1f2b;
+  --maroon-deep: #5a1420;
+  --gold: #c9962c;
+  --gold-soft: #e8c978;
+  --night: #2c121c;
+  --accent-teal: #1f6f5c;
+  --accent-teal-soft: #4fa88f;
+  --vermillion: #c1432b;
+  --ink: #2a1d14;
+  --line: rgba(122, 31, 43, 0.18);
+  --shadow: 0 18px 40px rgba(90, 20, 32, 0.14);
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  background: var(--ivory);
+  color: var(--ink);
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── Marigold Divider ── */
+.marigold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 8px 0 36px;
+}
+.marigold-divider .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* ── Gold linear Text ── */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #e8c978, #c9962c 70%, #a97a1f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ── Temple Arch ── */
+.arch-frame {
+  border-radius: 170px 170px 18px 18px;
+}
+.arch-inner {
+  border-radius: 162px 162px 12px 12px;
+}
+
+/* ── Hero diagonal pattern ── */
+.hero-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(232, 201, 120, 0.05) 0 2px,
+    transparent 2px 26px
+  );
+}
+
+/* ── FAQ details/summary reset ── */
+details summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary .faq-icon {
+  transform: rotate(45deg);
+}
+.faq-icon {
+  transition: transform 0.2s ease;
+}
