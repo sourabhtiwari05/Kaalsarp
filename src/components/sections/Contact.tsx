@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { services } from "@/data/services";
 import { createWhatsAppUrl } from "@/lib/whatsapp";
 
 type FormState = "idle" | "submitting" | "success" | "error";
@@ -8,6 +9,7 @@ type FormState = "idle" | "submitting" | "success" | "error";
 export function Contact() {
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
+  const [selectedServiceId, setSelectedServiceId] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<FormState>("idle");
@@ -17,6 +19,8 @@ export function Contact() {
     if (!name.trim()) newErrors.name = "नाम आवश्यक है।";
     if (!/^[0-9]{10}$/.test(mobile))
       newErrors.mobile = "10 अंकों का मोबाइल नम्बर दर्ज करें।";
+    if (!selectedServiceId)
+      newErrors.service = "कृपया पूजा का चयन करें।";
     return newErrors;
   }
 
@@ -26,8 +30,16 @@ export function Contact() {
     setErrors(v);
     if (Object.keys(v).length > 0) return;
 
+    const selectedService = services.find(
+      (service) => service.id === selectedServiceId,
+    );
+    if (!selectedService) {
+      setErrors({ service: "कृपया पूजा का चयन करें।" });
+      return;
+    }
+
     setStatus("submitting");
-    const waText = `नमस्ते पंडित जी,\nनाम: ${name}\nमोबाइल: ${mobile}${message ? `\nसंदेश: ${message}` : ""}\nDosh Nivaran Puja के बारे में जानकारी चाहिए।`;
+    const waText = `नमस्ते पंडित जी,\nनाम: ${name}\nमोबाइल: ${mobile}\nपूजा: ${selectedService.title}${message ? `\nसंदेश: ${message}` : ""}\nमुझे ${selectedService.title} के बारे में जानकारी चाहिए।`;
     window.open(createWhatsAppUrl(waText), "_blank", "noopener");
     setStatus("success");
   }
@@ -138,6 +150,40 @@ export function Contact() {
             {errors.mobile && (
               <p role="alert" className="text-vermillion text-xs mt-1">
                 {errors.mobile}
+              </p>
+            )}
+          </div>
+
+          {/* Service */}
+          <div className="mb-5">
+            <label
+              htmlFor="contact-service"
+              className="block font-worksans text-[0.88rem] font-semibold text-maroon-deep mb-1.5"
+            >
+              आप कौन-सी पूजा करवाना चाहते हैं?{" "}
+              <span aria-hidden="true" className="text-vermillion">
+                *
+              </span>
+            </label>
+            <select
+              id="contact-service"
+              required
+              value={selectedServiceId}
+              onChange={(e) => setSelectedServiceId(e.target.value)}
+              className={`w-full px-4 py-3 rounded-xl bg-white border text-ink font-worksans text-sm focus:outline-none focus:ring-2 focus:ring-gold transition ${
+                errors.service ? "border-vermillion" : "border-line"
+              }`}
+            >
+              <option value="">पूजा चुनें</option>
+              {services.map((service) => (
+                <option key={service.id} value={service.id}>
+                  {service.titleHi} ({service.title})
+                </option>
+              ))}
+            </select>
+            {errors.service && (
+              <p role="alert" className="text-vermillion text-xs mt-1">
+                {errors.service}
               </p>
             )}
           </div>

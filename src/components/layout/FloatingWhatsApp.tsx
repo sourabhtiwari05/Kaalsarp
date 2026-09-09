@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { Phone } from "lucide-react";
+import { siteConfig } from "@/data/site";
 import { createWhatsAppUrl, DEFAULT_WA_MESSAGE } from "@/lib/whatsapp";
 
 export function FloatingWhatsApp() {
@@ -8,6 +10,24 @@ export function FloatingWhatsApp() {
 
   return (
     <div className="fixed z-100 bottom-4 right-4 sm:bottom-5.5 sm:right-5.5 flex items-center gap-3">
+      <Link
+        href={`tel:${siteConfig.phone.primary}`}
+        aria-label="Call us"
+        className="
+          rounded-full flex items-center justify-center
+          bg-[#2563EB]
+          w-13 h-13 sm:w-15 sm:h-15
+          shadow-[0_10px_26px_rgba(37,99,235,0.45)]
+          hover:brightness-105 transition-[filter] duration-150
+          focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2563EB]/50
+        "
+      >
+        <Phone
+          className="w-6.5 h-6.5 sm:w-7 sm:h-7 text-white"
+          strokeWidth={2.5}
+          aria-hidden="true"
+        />
+      </Link>
       <Link
         href="https://www.instagram.com/dheerajsharma2043/"
         target="_blank"
