@@ -18,6 +18,7 @@ export function FloatingWhatsApp() {
           bg-[#2563EB]
           w-13 h-13 sm:w-15 sm:h-15
           shadow-[0_10px_26px_rgba(37,99,235,0.45)]
+          animate-call-pulse motion-reduce:animate-none
           hover:brightness-105 transition-[filter] duration-150
           focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2563EB]/50
         "

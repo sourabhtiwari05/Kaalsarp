@@ -61,6 +61,11 @@ const config: Config = {
           "70%": { boxShadow: "0 0 0 14px rgba(37,211,102,0), 0 10px 26px rgba(37,211,102,0.45)" },
           "100%": { boxShadow: "0 0 0 0 rgba(37,211,102,0), 0 10px 26px rgba(37,211,102,0.45)" },
         },
+        callPulse: {
+          "0%": { boxShadow: "0 0 0 0 rgba(37,99,235,0.5), 0 10px 26px rgba(37,99,235,0.45)" },
+          "70%": { boxShadow: "0 0 0 14px rgba(37,99,235,0), 0 10px 26px rgba(37,99,235,0.45)" },
+          "100%": { boxShadow: "0 0 0 0 rgba(37,99,235,0), 0 10px 26px rgba(37,99,235,0.45)" },
+        },
         fadeUp: {
           from: { opacity: "0", transform: "translateY(20px)" },
           to: { opacity: "1", transform: "translateY(0)" },
@@ -70,6 +75,7 @@ const config: Config = {
         "spin-cw": "spinCW 40s linear infinite",
         "spin-ccw": "spinCCW 60s linear infinite",
         "wa-pulse": "waPulse 2.4s infinite",
+        "call-pulse": "callPulse 2.4s infinite",
         "fade-up": "fadeUp 0.5s ease both",
       },
     },
